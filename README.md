@@ -25,11 +25,11 @@ Install Ultra7 with the following gem command:
 
     # just call decode_utf7
     puts Ultra7::MIME.decode_utf7('1 +- 1 = 2')
-    => 1 + 1 = 2
+    => "1 + 1 = 2"
 
     # Decodes UTF-7, returning string with default encoding
     puts Ultra7::MIME.decode_utf7('Hello, +ZeVnLIqe-')
-    => Hello, 日本語 
+    => "Hello, 日本語"
 
     # Decodes UTF-7, returning string with explicit UTF-8 encoding
     Ultra7::MIME.decode_utf7('Hello, +ZeVnLIqe-', encoding: 'utf-8')
@@ -40,8 +40,8 @@ Install Ultra7 with the following gem command:
       include Ultra7::MIME
     end
 
-    puts Foo.decode_utf7('1 +- 1 = 2')
-    => 1 + 1 = 2
+    puts Foo.decode_utf7('Hi Mom -+Jjo--!')
+    => "Hi Mom -☺-!" 
 
 
 ## Learn more 

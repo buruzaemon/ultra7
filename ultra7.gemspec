@@ -18,6 +18,7 @@ END_DESC
   s.require_path = 'lib'
   s.files = [
     'lib/ultra7.rb', 
+    'lib/ultra7/mime.rb', 
     'lib/ultra7/version.rb', 
     'README.md',
     'LICENSE', 
