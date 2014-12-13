@@ -10,15 +10,27 @@ module Ultra7
 
     # Returns the decoded value for the given
     # UTF-7 encoded `text`. If the optional
-    # `encoding` value is not specified, then
-    # the resulting string will use the default
+    # `encoding` value is not specified, in the `options`
+    # hash, then the resulting string will use the default
     # `Encoding.default_external` encoding.
     #
     # @param [String] UTF-7 encoded text
     # @param [Hash] options
-    # @return UTF-7 decoded value
-    # @raise [ArgumentError] if the given `encoding` cannot be found
-    def self.decode_utf7(text, options={})
+    # @return [String] UTF-7 decoded value
+    # @raise [ArgumentError] if text other than UTF-7 are passed in, or the given `encoding` cannot be found
+    # convert UTF-7
+    def self.decode_utf7(text, options={encoding: nil})
+      # only deal with UTF-7 encoding
+      text.scan(/=\?(.*)\?[qb]\?/i).each {
+        e = $1
+        if e and !(e=~/utf\-7/i)
+          raise ArgumentError.new("Cannot decode #{e} as UTF-7!")
+        end
+      }
+
+      # remove any encoding start/end markers
+      text = text.gsub(/\?=/, '').gsub(/=\?[^?]*utf\-7\?[qb]\?/i, '')
+
       enc = options[:encoding].nil? \
         ? Encoding.default_external \
         : Encoding.find(options[:encoding])
