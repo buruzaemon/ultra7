@@ -40,6 +40,8 @@ which is meant for decoding mailbox names.
         # Decodes UTF-7, returning string with explicit UTF-8 encoding
         subject = '=?unicode-1-1-utf-7?Q?+vDCy7A-  +wMHQ3A-  +xUy5vA-(+wuTTKA-)?='
         Ultra7::MIME.decode_utf7(subject, encoding: 'utf-8')
+
+* And you can use `Ultra7::MIME` as a mixin.
     
         # As a mixin to another class
         require 'ultra7/mime'
