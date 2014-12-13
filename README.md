@@ -32,7 +32,8 @@ Install Ultra7 with the following gem command:
     => "Hello, 日本語"
 
     # Decodes UTF-7, returning string with explicit UTF-8 encoding
-    Ultra7::MIME.decode_utf7('Hello, +ZeVnLIqe-', encoding: 'utf-8')
+    subject = '=?unicode-1-1-utf-7?Q?+vDCy7A-  +wMHQ3A-  +xUy5vA-(+wuTTKA-)?='
+    Ultra7::MIME.decode_utf7(subject, encoding: 'utf-8')
 
     # As a mixin to another class
     require 'ultra7/mime'
