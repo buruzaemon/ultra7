@@ -6,7 +6,7 @@ Gem::Specification.new do |s|
   s.name = 'ultra7'
   s.version = Ultra7::VERSION
   s.license = 'BSD'
-  s.summary = 'A UTF-7 MIME decoder, plain and simple.'
+  s.summary = 'A UTF-7 MIME header decoder, plain and simple.'
   s.description = <<END_DESC
 ultra7 decodes UTF-7 in the context of MIME headers (c.f. https://tools.ietf.org/html/rfc2152).
 END_DESC
