@@ -12,13 +12,15 @@ which is meant for decoding mailbox names.
 
 
 ## Requirements
-Ultra7 does not really require anything, except a Ruby of _1.9 or greater_.
+
+* Ultra7 does not really require anything, except a Ruby of _1.9 or greater_.
 
 
 ## Installation
-Install Ultra7 with the following gem command:
 
-    gem install ultra7
+* Install Ultra7 with the following gem command:
+
+        gem install ultra7
 
 
 ## Usage
