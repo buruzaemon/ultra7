@@ -1,5 +1,5 @@
 # Ultra7
-A UTF-7 MIME decoder, plain and simple.
+A UTF-7 MIME header decoder, plain and simple.
 
 ## What is Ultra7?
 
@@ -25,7 +25,7 @@ A UTF-7 MIME decoder, plain and simple.
 
 ## Usage
 
-* Using Ultra7 is pretty straight-forward, really.
+* Using Ultra7 is pretty straight-forward, really. It _only_ decodes UTF-7.
 
         require 'ultra7'
     
@@ -37,9 +37,10 @@ A UTF-7 MIME decoder, plain and simple.
         puts Ultra7::MIME.decode_utf7('Hello, +ZeVnLIqe-')
         => "Hello, 日本語"
     
-        # Decodes UTF-7, returning string with explicit UTF-8 encoding
+        # Decodes an actual Subject MIME header in UTF-7,
+        # returning string with explicit UTF-8 encoding
         subject = '=?unicode-1-1-utf-7?Q?+vDCy7A-  +wMHQ3A-  +xUy5vA-(+wuTTKA-)?='
-        Ultra7::MIME.decode_utf7(subject, encoding: 'utf-8') 
+        Ultra7::MIME.decode_utf7(subject, encoding: 'UTF-8')
         => "배달  상태  알림(실패)"
 
     

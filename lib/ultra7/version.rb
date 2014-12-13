@@ -7,7 +7,7 @@
 # It may be used as a mixin.
 module Ultra7
   # Version string for this Rubygem.
-  VERSION = "0.1.0"
+  VERSION = "0.2.0"
 end
 
 # Copyright (c) 2014-2015, Brooke M. Fujita.

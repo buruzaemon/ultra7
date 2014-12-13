@@ -1,4 +1,10 @@
 ## CHANGELOG
 
+
+- __2014/12/14__: 0.2.0 release.
+    - Enhancements to deal with encoding marker.
+	- Raise ArgumentError when non-UTF-7 encoding marker text is passed in.
+	- Added more tests.
+
 - __2014/12/13__: 0.1.0 release.
     - Initial release 
