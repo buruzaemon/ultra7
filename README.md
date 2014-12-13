@@ -24,28 +24,31 @@ which is meant for decoding mailbox names.
 
 
 ## Usage
-    require 'ultra7'
 
-    # just call decode_utf7
-    puts Ultra7::MIME.decode_utf7('1 +- 1 = 2')
-    => "1 + 1 = 2"
+* Using Ultra7 is pretty straight-forward, really.
 
-    # Decodes UTF-7, returning string with default encoding
-    puts Ultra7::MIME.decode_utf7('Hello, +ZeVnLIqe-')
-    => "Hello, 日本語"
-
-    # Decodes UTF-7, returning string with explicit UTF-8 encoding
-    subject = '=?unicode-1-1-utf-7?Q?+vDCy7A-  +wMHQ3A-  +xUy5vA-(+wuTTKA-)?='
-    Ultra7::MIME.decode_utf7(subject, encoding: 'utf-8')
-
-    # As a mixin to another class
-    require 'ultra7/mime'
-    class Foo
-      include Ultra7::MIME
-    end
-
-    puts Foo.decode_utf7('Hi Mom -+Jjo--!')
-    => "Hi Mom -☺-!" 
+        require 'ultra7'
+    
+        # just call decode_utf7
+        puts Ultra7::MIME.decode_utf7('1 +- 1 = 2')
+        => "1 + 1 = 2"
+    
+        # Decodes UTF-7, returning string with default encoding
+        puts Ultra7::MIME.decode_utf7('Hello, +ZeVnLIqe-')
+        => "Hello, 日本語"
+    
+        # Decodes UTF-7, returning string with explicit UTF-8 encoding
+        subject = '=?unicode-1-1-utf-7?Q?+vDCy7A-  +wMHQ3A-  +xUy5vA-(+wuTTKA-)?='
+        Ultra7::MIME.decode_utf7(subject, encoding: 'utf-8')
+    
+        # As a mixin to another class
+        require 'ultra7/mime'
+        class Foo
+          include Ultra7::MIME
+        end
+    
+        puts Foo.decode_utf7('Hi Mom -+Jjo--!')
+        => "Hi Mom -☺-!" 
 
 
 ## Learn more 
