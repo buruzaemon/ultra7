@@ -2,12 +2,13 @@
 A UTF-7 MIME decoder, plain and simple.
 
 ## What is Ultra7?
-Ultra7 is a UTF-7 decoder for MIME headers, unlike `Net::IMAP.decode_utf7`
-which is meant for decoding mailbox names. `Ultra7::MIME` is also a
-a mixin, so you can conveniently combine it in another class by using
-`include`.
 
-You can learn more about [Ultra7 at bitbucket](https://bitbucket.org/buruzaemon/ultra7/).
+* Ultra7 is a UTF-7 decoder for MIME headers, unlike `Net::IMAP.decode_utf7`
+which is meant for decoding mailbox names. 
+* `Ultra7::MIME` is also a a mixin, so you can conveniently combine it in another class by using
+`include`.
+* Read the [API documentation](http://www.rubydoc.info/gems/ultra7).
+* Learn more about [Ultra7 at bitbucket](https://bitbucket.org/buruzaemon/ultra7/).
 
 
 ## Requirements
