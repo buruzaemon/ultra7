@@ -1,5 +1,7 @@
 ## CHANGELOG
 
+- __2014/12/14__: 0.3.0 release.
+    - Slight enhancement to MIME encoded-word handling. 
 
 - __2014/12/14__: 0.2.0 release.
     - Enhancements to deal with encoding marker.
