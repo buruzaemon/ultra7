@@ -13,11 +13,15 @@ class TestUltra7 < MiniTest::Unit::TestCase
   TEXT2 = 'Hello, +ZeVnLIqe-'
   EXP2  = 'Hello, 日本語' 
 
-  TEXT3 = '=?unicode-1-1-utf-7?Q?+vDCy7A-  +wMHQ3A-  +xUy5vA-(+wuTTKA-)?='
-  EXP3  = '배달  상태  알림(실패)' 
+  TEXT3 = '=?utf-7?Q?RE: +AFs-Bug 3605+AF0- rewrite+AF8-header will not rewrite a missing header?='
+  EXP3  = 'RE: [Bug 3605] rewrite_header will not rewrite a missing header'
 
-  TEXT4 = '=?utf-7?Q?+vDCy7A-  +wMHQ3A-?= hello =?utf-7?Q?+xUy5vA-(+wuTTKA-)?='
-  EXP4  = '배달  상태 hello 알림(실패)'.encode(Encoding.find('EUC-KR')) 
+  TEXT4 = '=?unicode-1-1-utf-7?Q?+vDCy7A-  +wMHQ3A-  +xUy5vA-(+wuTTKA-)?='
+  EXP4  = '배달  상태  알림(실패)' 
+
+  TEXT5 = '=?utf-7?Q?+vDCy7A-  +wMHQ3A-?= hello =?utf-7?Q?+xUy5vA-(+wuTTKA-)?='
+  EXP5  = '배달  상태 hello 알림(실패)'.encode(Encoding.find('EUC-KR')) 
+
 
   def setup
     @klass = Class.new do
@@ -39,10 +43,13 @@ class TestUltra7 < MiniTest::Unit::TestCase
                  Ultra7::MIME.decode_utf7(TEXT2)
     
     assert_equal EXP3,
-                 Ultra7::MIME.decode_utf7(TEXT3, encoding: 'UTF-8')
+                 Ultra7::MIME.decode_utf7(TEXT3)
   
     assert_equal EXP4,
-                 Ultra7::MIME.decode_utf7(TEXT4, encoding: 'EUC-KR')
+                 Ultra7::MIME.decode_utf7(TEXT4, encoding: 'UTF-8')
+  
+    assert_equal EXP5,
+                 Ultra7::MIME.decode_utf7(TEXT5, encoding: 'EUC-KR')
   
     assert_raises ArgumentError do
       Ultra7::MIME.decode_utf7(TEXT2, encoding: 'foobar')
@@ -57,13 +64,16 @@ class TestUltra7 < MiniTest::Unit::TestCase
 
     assert_equal EXP2,
                  @klass.decode_utf7(TEXT2)
-    
+  
     assert_equal EXP3,
-                 @klass.decode_utf7(TEXT3, encoding: 'UTF-8')
+                 @klass.decode_utf7(TEXT3)
   
     assert_equal EXP4,
-                 @klass.decode_utf7(TEXT4, encoding: 'EUC-KR')
+                 @klass.decode_utf7(TEXT4, encoding: 'UTF-8')
   
+    assert_equal EXP5,
+                 @klass.decode_utf7(TEXT5, encoding: 'EUC-KR')
+
     assert_raises ArgumentError do
       @klass.decode_utf7(TEXT2, encoding: 'foobar')
     end
