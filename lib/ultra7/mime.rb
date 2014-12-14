@@ -18,18 +18,18 @@ module Ultra7
     # @param [Hash] options
     # @return [String] UTF-7 decoded value
     # @raise [ArgumentError] if text other than UTF-7 are passed in, or the given `encoding` cannot be found
-    # convert UTF-7
     def self.decode_utf7(text, options={encoding: nil})
       # only deal with UTF-7 encoding
-      text.scan(/=\?(.*)\?[qb]\?/i).each {
+      text.scan(/=\?(.*)\?[q]\?/i).each {
         e = $1
         if e and !(e=~/utf\-7/i)
           raise ArgumentError.new("Cannot decode #{e} as UTF-7!")
         end
       }
 
-      # remove any encoding start/end markers
-      text = text.gsub(/\?=/, '').gsub(/=\?[^?]*utf\-7\?[qb]\?/i, '')
+      # remove any opening charset and Q-encoding start/end markers
+      # for MIME encoded words
+      text = text.gsub(/\?=/, '').gsub(/=\?[^?]*utf\-7\?[q]\?/i, '')
 
       enc = options[:encoding].nil? \
         ? Encoding.default_external \
