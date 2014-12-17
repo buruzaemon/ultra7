@@ -22,6 +22,17 @@ class TestUltra7 < MiniTest::Unit::TestCase
   TEXT5 = '=?utf-7?Q?+vDCy7A-  +wMHQ3A-?= hello =?utf-7?Q?+xUy5vA-(+wuTTKA-)?='
   EXP5  = '배달  상태 hello 알림(실패)'.encode(Encoding.find('EUC-KR')) 
 
+  TEXT6 = <<-MULTILINE
+=?unicode-1-1-utf-7?Q?+WPE- (+MHIwQw-)?=
+=?unicode-1-1-utf-7?Q?+XxA- (+MHUwRQ-)?=
+=?unicode-1-1-utf-7?Q?+U8I- (+MH8wQw-)?=
+MULTILINE
+  EXP6 = <<-MULTILINE
+壱 (ひぃ)
+弐 (ふぅ)
+参 (みぃ)
+MULTILINE
+
 
   def setup
     @klass = Class.new do
@@ -32,6 +43,11 @@ class TestUltra7 < MiniTest::Unit::TestCase
   def teardown
     @klass = nil
   end
+
+  #def test_foo
+  #  puts TEXT6
+  #  puts Ultra7::MIME.decode_utf7(TEXT6)
+  #end
 
   def test_decode_utf7
     assert_equal ID, Ultra7::MIME.decode_utf7(ID)
@@ -50,6 +66,9 @@ class TestUltra7 < MiniTest::Unit::TestCase
   
     assert_equal EXP5,
                  Ultra7::MIME.decode_utf7(TEXT5, encoding: 'EUC-KR')
+  
+    assert_equal EXP6,
+                 Ultra7::MIME.decode_utf7(TEXT6, encoding: 'UTF-8')
   
     assert_raises ArgumentError do
       Ultra7::MIME.decode_utf7(TEXT2, encoding: 'foobar')
@@ -74,6 +93,9 @@ class TestUltra7 < MiniTest::Unit::TestCase
     assert_equal EXP5,
                  @klass.decode_utf7(TEXT5, encoding: 'EUC-KR')
 
+    assert_equal EXP6,
+                 @klass.decode_utf7(TEXT6, encoding: 'UTF-8')
+  
     assert_raises ArgumentError do
       @klass.decode_utf7(TEXT2, encoding: 'foobar')
     end
