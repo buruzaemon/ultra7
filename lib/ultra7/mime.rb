@@ -8,19 +8,21 @@ module Ultra7
       base.extend(ClassMethods)
     end
 
-    # Returns the decoded value for the given
-    # UTF-7 encoded `text`. If the optional
-    # `encoding` value is not specified, in the `options`
+    # Parse the given UTF-7 encoded-word text
+    # and return the corresponding decoded value.
+    #
+    # If the `:encoding` name is not specified in the `options`
     # hash, then the resulting string will use the default
     # `Encoding.default_external` encoding.
     #
-    # @param [String] UTF-7 encoded text
+    # @param [String] text UTF-7 encoded-word text
     # @param [Hash] options
     # @return [String] UTF-7 decoded value
-    # @raise [ArgumentError] if text other than UTF-7 are passed in, or the given `encoding` cannot be found
+    # @raise [ArgumentError] if text other than UTF-7 is passed in,
+    #   or the named `:encoding` cannot be found
     def self.decode_utf7(text, options={encoding: nil})
       # only deal with UTF-7 encoding
-      text.scan(/=\?(.*)\?[q]\?/i).each {
+      text.scan(/=\?(.*)\?[q]\?/im).each {
         e = $1
         if e and !(e=~/utf\-7/i)
           raise ArgumentError.new("Cannot decode #{e} as UTF-7!")
@@ -29,13 +31,13 @@ module Ultra7
 
       # remove any opening charset and Q-encoding start/end markers
       # for MIME encoded words
-      text = text.gsub(/\?=/, '').gsub(/=\?[^?]*utf\-7\?[q]\?/i, '')
+      text = text.gsub(/\?=/m, '').gsub(/=\?[^?]*utf\-7\?[q]\?/im, '')
 
       enc = options[:encoding].nil? \
         ? Encoding.default_external \
         : Encoding.find(options[:encoding])
       
-      return text.gsub(/\+(.*?)-/n) {
+      return text.gsub(/\+(.*?)-/mn) {
         if $1.empty?
           "+"
         else
