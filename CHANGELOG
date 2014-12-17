@@ -1,5 +1,12 @@
 ## CHANGELOG
 
+- __2014/12/17__: 0.5.0 release.
+    - Enhanced handling for multi-line string input.
+	- Minor documentation edits for clarity.
+
+- __2014/12/14__: 0.4.0 release.
+    - Very minor documentation corrections.
+
 - __2014/12/14__: 0.3.0 release.
     - Slight enhancement to MIME encoded-word handling. 
 
