@@ -12,7 +12,7 @@ ultra7 decodes UTF-7 in the context of MIME headers (c.f. https://tools.ietf.org
 END_DESC
   s.author = 'Brooke M. Fujita'
   s.email = 'buruzaemon@gmail.com'
-  s.homepage = 'https://bitbucket.org/buruzaemon/ultra7'
+  s.homepage = 'https://github.com/buruzaemon/ultra7'
   s.platform = Gem::Platform::RUBY
   s.required_ruby_version = '>= 1.9'
   s.require_path = 'lib'
@@ -27,7 +27,7 @@ END_DESC
   ]
 end
 
-# Copyright (c) 2014-2015, Brooke M. Fujita.
+# Copyright (c) 2015, Brooke M. Fujita.
 # All rights reserved.
 # 
 # Redistribution and use in source and binary forms, with or without

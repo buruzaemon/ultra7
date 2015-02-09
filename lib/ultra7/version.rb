@@ -7,10 +7,10 @@
 # It may be used as a mixin.
 module Ultra7
   # Version string for this Rubygem.
-  VERSION = "0.5.0"
+  VERSION = "1.0.0"
 end
 
-# Copyright (c) 2014-2015, Brooke M. Fujita.
+# Copyright (c) 2015, Brooke M. Fujita.
 # All rights reserved.
 # 
 # Redistribution and use in source and binary forms, with or without

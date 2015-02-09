@@ -33,7 +33,6 @@ MULTILINE
 参 (みぃ)
 MULTILINE
 
-
   def setup
     @klass = Class.new do
       include Ultra7::MIME
@@ -43,11 +42,6 @@ MULTILINE
   def teardown
     @klass = nil
   end
-
-  #def test_foo
-  #  puts TEXT6
-  #  puts Ultra7::MIME.decode_utf7(TEXT6)
-  #end
 
   def test_decode_utf7
     assert_equal ID, Ultra7::MIME.decode_utf7(ID)
@@ -102,7 +96,7 @@ MULTILINE
   end
 end
 
-# Copyright (c) 2014-2015, Brooke M. Fujita.
+# Copyright (c) 2015, Brooke M. Fujita.
 # All rights reserved.
 # 
 # Redistribution and use in source and binary forms, with or without
