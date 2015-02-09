@@ -61,7 +61,7 @@ A UTF-7 MIME header decoder, plain and simple.
 - Contrast with
   [`Net::IMAP.decode_utf7`](http://ruby-doc.org/stdlib-1.9.3/libdoc/net/imap/rdoc/Net/IMAP.html#method-c-decode_utf7).
 
-## Contributing to natto
+## Contributing to Ultra7
 -  Use [mercurial](http://mercurial.selenic.com/) and [check out the latest code at bitbucket](https://bitbucket.org/buruzaemon/ultra7/src/) to make sure the feature hasn't been implemented or the bug hasn't been fixed yet.
 -  [Browse the issue tracker](https://bitbucket.org/buruzaemon/ultra7/issues/) to make sure someone already hasn't requested it and/or contributed it.
 -  Fork the project.
