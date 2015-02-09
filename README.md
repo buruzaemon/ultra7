@@ -8,7 +8,7 @@ A UTF-7 MIME header decoder, plain and simple.
 * `Ultra7::MIME` is also a mixin, so you can conveniently combine it in another class by using
 `include`.
 * Read the [API documentation](http://www.rubydoc.info/gems/ultra7).
-* Learn more about [Ultra7 at bitbucket](https://bitbucket.org/buruzaemon/ultra7/).
+* Learn more about [Ultra7 at GitHub](https://github.com/buruzaemon/ultra7).
 
 
 ## Requirements
@@ -62,8 +62,8 @@ A UTF-7 MIME header decoder, plain and simple.
   [`Net::IMAP.decode_utf7`](http://ruby-doc.org/stdlib-1.9.3/libdoc/net/imap/rdoc/Net/IMAP.html#method-c-decode_utf7).
 
 ## Contributing to Ultra7
--  Use [mercurial](http://mercurial.selenic.com/) and [check out the latest code at bitbucket](https://bitbucket.org/buruzaemon/ultra7/src/) to make sure the feature hasn't been implemented or the bug hasn't been fixed yet.
--  [Browse the issue tracker](https://bitbucket.org/buruzaemon/ultra7/issues/) to make sure someone already hasn't requested it and/or contributed it.
+-  Use [git](http://git-scm.com/) and [check out the latest code at GitHub](https://github.com/buruzaemon/ultra7) to make sure the feature hasn't been implemented or the bug hasn't been fixed yet.
+-  [Browse the issue tracker](https://github.com/buruzaemon/ultra7/issues) to make sure someone already hasn't requested it and/or contributed it.
 -  Fork the project.
 -  Start a feature/bugfix branch.
 -  Commit and push until you are happy with your contribution.
@@ -74,4 +74,4 @@ A UTF-7 MIME header decoder, plain and simple.
 Please see the {file:CHANGELOG} for this gem's release history.
 
 ## Copyright
-Copyright &copy; 2014-2015, Brooke M. Fujita. All rights reserved. Please see the {file:LICENSE} file for further details.
+Copyright &copy; 2015, Brooke M. Fujita. All rights reserved. Please see the {file:LICENSE} file for further details.
