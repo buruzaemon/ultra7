@@ -1,4 +1,6 @@
 # Ultra7
+Master: [![Build Status](https://travis-ci.org/buruzaemon/ultra7.svg?branch=master)](https://travis-ci.org/buruzaemon/ultra7) 
+
 A UTF-7 MIME header decoder, plain and simple.
 
 ## What is Ultra7?
