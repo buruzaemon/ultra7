@@ -1,4 +1,4 @@
-# Ultra7 [![Build Status](https://travis-ci.org/buruzaemon/ultra7.svg?branch=master)](https://travis-ci.org/buruzaemon/ultra7) 
+# Ultra7 [![Gem Version](https://badge.fury.io/rb/ultra7.svg)](http://badge.fury.io/rb/ultra7)  [![Build Status](https://travis-ci.org/buruzaemon/ultra7.svg?branch=master)](https://travis-ci.org/buruzaemon/ultra7) 
 
 A UTF-7 MIME header decoder, plain and simple.
 
